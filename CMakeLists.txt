@@ -126,6 +126,10 @@ add_library(modplug ${LIB_TYPE}
   src/tables.h
 )
 
+if (UNIX)
+  add_compile_options(modplug PRIVATE -fPIC)
+endif()
+
 if (BUILD_SHARED_LIBS)
   if(APPLE)
     target_link_libraries(modplug -Wl,-undefined,error)
