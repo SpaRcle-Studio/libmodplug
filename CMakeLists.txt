@@ -127,7 +127,7 @@ add_library(modplug ${LIB_TYPE}
 )
 
 if (UNIX)
-  add_compile_options(modplug PRIVATE -fPIC)
+  target_compile_options(modplug PRIVATE -fPIC)
 endif()
 
 if (BUILD_SHARED_LIBS)
